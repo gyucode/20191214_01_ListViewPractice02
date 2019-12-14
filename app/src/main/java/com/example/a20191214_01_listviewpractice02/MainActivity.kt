@@ -2,10 +2,13 @@ package com.example.a20191214_01_listviewpractice02
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.a20191214_01_listviewpractice02.adapters.GameAdatper
 import com.example.a20191214_01_listviewpractice02.datas.GameData
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
-
+    //? => 널이 될 수 잇음
+    var gameAdatper:GameAdatper? = null
     val gameList = ArrayList<GameData>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +24,9 @@ class MainActivity : BaseActivity() {
 
     override fun setValues() {
         addGames()
+
+        gameAdatper = GameAdatper(mContext, R.layout.game_list_item, gameList)
+        gameListView.adapter = gameAdatper
     }
 
     fun addGames(){
