@@ -18,6 +18,7 @@ class GameDetailActivity : BaseActivity() {
 
     override fun setupEvents() {
 
+
     }
 
     override fun setValues() {
