@@ -18,9 +18,11 @@ class GameAdatper(context: Context, resId:Int, list:ArrayList<GameData>) : Array
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         var tempRow = convertView
-        if (tempRow == null){
+
+        tempRow?.let {
             tempRow = inf.inflate(R.layout.game_list_item, null)
         }
+
         val row = tempRow!!
 
         val data = mList. get(position)
